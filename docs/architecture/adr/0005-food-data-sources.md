@@ -1,6 +1,6 @@
 # ADR-0005: Źródła danych żywieniowych
 
-- Status: Accepted with follow-up discovery
+- Status: Accepted
 - Data: 2026-07-07
 - Decydenci: właściciel produktu + AI Architect
 
@@ -22,3 +22,6 @@ Pełne bazy produktów są zbyt duże i niedopasowane do podstawowego offline'ow
 - przed dystrybucją wymagany jest audyt warunków wykorzystania każdego źródła,
 - szczegółowa strategia selekcji pozostaje zadaniem discovery.
 
+## Powiązane Issues
+
+- [#28 — opracować pipeline polskiego katalogu 3–5 tys. produktów](https://github.com/michalbednarczyk1993/Przepisy/issues/28)

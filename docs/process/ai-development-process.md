@@ -24,18 +24,24 @@ flowchart TD
     DECISION["Awaiting human decision"]
     READY["Ready for AI"]
     WORK["In progress"]
-    REVIEW["PR, CI and AI review"]
+    PR["PR open"]
+    REVIEW["AI review"]
+    CI["CI passed"]
     UAT["Ready for UAT"]
+    ACCEPTED["Accepted"]
     DONE["Done"]
     BACKLOG --> REFINE
     REFINE --> DECISION
     REFINE --> READY
     DECISION --> READY
     READY --> WORK
-    WORK --> REVIEW
-    REVIEW --> UAT
-    REVIEW --> DONE
-    UAT --> DONE
+    WORK --> PR
+    PR --> REVIEW
+    REVIEW --> CI
+    CI --> UAT
+    CI --> DONE
+    UAT --> ACCEPTED
+    ACCEPTED --> DONE
 ```
 
 Dokładne statusy GitHub Project:
@@ -88,4 +94,3 @@ Okresowy przegląd analizuje kod, dokumenty, Issues, ADR, zależności i testy. 
 ## Wersja autonomii
 
 Na początku autonomia jest kontrolowana: AI planuje i implementuje, ale zmiany produktu, architektury, danych i procesu wymagają wskazanych akceptacji. Automatyczne mergowanie można rozszerzać dopiero po ustabilizowaniu CI, review i UAT.
-

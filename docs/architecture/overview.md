@@ -55,7 +55,7 @@ flowchart TD
 - `recipes` — przepisy i ich składniki,
 - `product` — katalog produktów, warianty i pochodzenie danych,
 - `quantity` — ilości, jednostki, miary, opakowania i konwersje,
-- `pricing` — robocza nazwa modułu kalkulacyjnego wartości odżywczych; nazwa wymaga ponownego zatwierdzenia przed M4.
+- `pricing` — zaakceptowana w ADR-0004 nazwa modułu kalkulacyjnego wartości odżywczych. Issue [#25](https://github.com/michalbednarczyk1993/Przepisy/issues/25) jest propozycją jej zmiany; dopóki nie powstanie zastępujący ADR, obowiązuje `pricing`.
 
 Moduły mają publikować małe kontrakty. Warstwa presentation nie importuje tabel Drift i nie zna algorytmu konwersji.
 
@@ -84,4 +84,3 @@ M0–M4 nie wymagają sieci do podstawowego działania. Integracja z Open Food F
 ## Obserwowalność i prywatność
 
 W obecnym zakresie nie ma zdalnej telemetrii. Logi nie mogą zawierać treści przepisów, ścieżek prywatnych ani danych wprowadzonych przez użytkownika w buildach produkcyjnych.
-

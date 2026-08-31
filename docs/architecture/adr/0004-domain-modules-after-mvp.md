@@ -14,13 +14,16 @@ Po MVP wydzielamy moduły:
 
 - `product` — produkty i warianty,
 - `quantity` — ilości, jednostki, miary, opakowania i konwersje,
-- `pricing` — roboczo kalkulacje wartości odżywczych i ostrzeżenia o brakach.
+- `pricing` — kalkulacje wartości odżywczych i ostrzeżenia o brakach.
 
 Moduły publikują interfejsy, z których korzystają use case'y i UI.
 
 ## Konsekwencje
 
 - domena może rosnąć bez rozlewania logiki po widgetach,
-- granice encji i nazwa `pricing` wymagają doprecyzowania przed implementacją,
+- granice encji wymagają doprecyzowania przed implementacją,
 - nie wprowadzamy tych modułów do MVP tylko „na zapas”.
 
+## Powiązane Issues
+
+- [#25 — propozycja zmiany nazwy `pricing` na `nutrition`](https://github.com/michalbednarczyk1993/Przepisy/issues/25). Do czasu zaakceptowania i zapisania zastępującego ADR obowiązuje decyzja z tego dokumentu.

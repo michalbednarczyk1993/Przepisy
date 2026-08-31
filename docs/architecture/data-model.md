@@ -33,7 +33,7 @@ Poniższy model wyznacza kierunek, ale nie jest jeszcze zatwierdzonym schematem 
 erDiagram
     RECIPE ||--o{ RECIPE_INGREDIENT : contains
     PRODUCT ||--o{ PRODUCT_VARIANT : offers
-    PRODUCT ||--o{ RECIPE_INGREDIENT : used_as
+    PRODUCT o|--o{ RECIPE_INGREDIENT : optionally_matches
     PRODUCT_VARIANT o|--o{ RECIPE_INGREDIENT : overrides
     UNIT ||--o{ RECIPE_INGREDIENT : measures
     PRODUCT_VARIANT ||--o{ NUTRITION_VALUE : has
@@ -54,6 +54,8 @@ Planowane rekordy:
 - `Nutrient`,
 - `NutritionProfile` / `NutritionValue`,
 - metadane źródła danych.
+
+W M2 `RecipeIngredient` może nie mieć jeszcze dopasowanego `Product`. Wtedy zachowuje wymaganą nazwę wpisaną przez użytkownika. Relacja z produktem staje się obowiązkowa tylko dla obliczeń, które rzeczywiście jej potrzebują; nie jest warunkiem zapisania przepisu.
 
 ## Wymagane własności modelu
 
@@ -81,4 +83,3 @@ Przejście M1 → M2 musi być bezstratne:
 - reprezentacja ilości i ułamków,
 - wersjonowanie wbudowanego katalogu,
 - polityka usuwania i dezaktywacji rekordów użytych historycznie.
-

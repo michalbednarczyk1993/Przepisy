@@ -25,7 +25,10 @@ Rekord MVP zawiera:
 - Unikalność nazwy nie zależy od wielkości liter.
 - Kategorii przypisanej do przepisu nie można usunąć.
 - Kategorie startowe: Śniadanie, Obiad, Kolacja, Deser, Przekąski, Azjatyckie i Do zrobienia.
-- Jeżeli użytkownik nie wskaże kategorii, formularz wybiera `Do zrobienia`, o ile kategoria istnieje.
+- Kategoria przepisu jest wymagana.
+- Formularz domyślnie wybiera `Do zrobienia`, jeżeli istnieje; w przeciwnym razie wybiera pierwszą dostępną kategorię.
+- Jeżeli nie istnieje żadna kategoria, zapis przepisu jest zablokowany, a formularz kieruje użytkownika do utworzenia kategorii.
+- Kategorię `Do zrobienia` można usunąć, jeżeli nie jest używana; nie jest specjalnym, nieusuwalnym rekordem systemowym.
 
 ## Widoki
 
@@ -116,4 +119,3 @@ Scenario: Ochrona używanej kategorii
 ## Poza zakresem MVP
 
 Strukturalne składniki, skalowanie porcji, wartości odżywcze, katalog produktów, wiele zdjęć, eksport, import URL, OCR, lista zakupów, konta, synchronizacja, backend i web.
-

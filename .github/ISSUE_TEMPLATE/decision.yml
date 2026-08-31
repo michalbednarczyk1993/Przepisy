@@ -1,6 +1,8 @@
 name: Decision / ADR
 description: Decyzja produktowa, architektoniczna lub manualna
 title: "[DECISION] "
+assignees:
+  - michalbednarczyk1993
 body:
   - type: textarea
     id: context
@@ -43,5 +45,5 @@ body:
     id: owner_answer
     attributes:
       label: Decyzja właściciela
-      description: Właściciel wpisuje wybraną opcję i ewentualne warunki.
+      description: Pozostaw puste przy zakładaniu Issue. Właściciel wpisuje wybraną opcję i warunki w komentarzu, a AI przenosi wynik do ADR lub rejestru decyzji.
 

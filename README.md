@@ -24,6 +24,7 @@ Składniki pozostają tekstem w MVP. Strukturalne składniki, skalowanie porcji,
 
 - [Wizja produktu](docs/product/vision.md)
 - [Roadmapa](docs/product/roadmap.md)
+- [Decyzje produktowe](docs/product/decisions.md)
 - [Wymagania MVP](docs/requirements/mvp.md)
 - [Architektura](ARCHITECTURE.md)
 - [Model danych](docs/architecture/data-model.md)
@@ -42,4 +43,3 @@ Składniki pozostają tekstem w MVP. Strukturalne składniki, skalowanie porcji,
 6. Funkcjonalność wymagająca UAT nie jest ukończona przed akceptacją właściciela produktu.
 
 Szczegółowy przebieg opisuje [AI Development Process](docs/process/ai-development-process.md).
-

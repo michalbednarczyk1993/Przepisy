@@ -15,11 +15,10 @@ Ten plik jest krótką mapą architektury. Szczegóły znajdują się w [opisie 
 
 ## Stan obecny i kierunek
 
-MVP ma dwa feature'y: `recipes` i `categories`. Po MVP składniki staną się strukturalne, a logika zostanie podzielona na moduły `product`, `quantity` i — zgodnie z dotychczasową decyzją roboczą — `pricing`, który odpowiada za wartości odżywcze, a nie ceny.
+MVP ma dwa feature'y: `recipes` i `categories`. Po MVP składniki staną się strukturalne, a logika zostanie podzielona na moduły `product`, `quantity` i — zgodnie z zaakceptowanym ADR-0004 — `pricing`, który odpowiada za wartości odżywcze, a nie ceny.
 
-Nazwa `pricing` oraz dokładny model `Product` / `ProductVariant` / `Food` wymagają osobnych decyzji przed implementacją tych etapów.
+Do czasu zaakceptowania decyzji zastępującej obowiązuje nazwa `pricing`. Issue [#25](https://github.com/michalbednarczyk1993/Przepisy/issues/25) proponuje zmianę na `nutrition`; jego rozstrzygnięcie będzie wymagało nowego ADR. Dokładny model `Product` / `ProductVariant` / `Food` wymaga osobnej decyzji przed M3.
 
 ## Granica MVP
 
 W MVP `Recipe.ingredients` jest tekstem. Nie wolno przedwcześnie wprowadzać katalogu produktów, wariantów, jednostek lub kalkulatora wartości odżywczych do zadań M0/M1.
-
