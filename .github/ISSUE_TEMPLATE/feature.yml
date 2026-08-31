@@ -1,0 +1,51 @@
+name: Feature / task
+description: Funkcja lub zadanie gotowe do refinementu
+title: "[FEATURE] "
+body:
+  - type: textarea
+    id: outcome
+    attributes:
+      label: Oczekiwany rezultat
+      description: Opisz problem użytkownika i stan po ukończeniu zadania.
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Kryteria akceptacji
+      description: Użyj testowalnej checklisty lub Given/When/Then.
+      placeholder: |
+        - [ ] ...
+    validations:
+      required: true
+  - type: textarea
+    id: out_of_scope
+    attributes:
+      label: Poza zakresem
+      description: Czego ten Issue świadomie nie obejmuje?
+    validations:
+      required: true
+  - type: textarea
+    id: dependencies
+    attributes:
+      label: Zależności i źródła prawdy
+      description: Linki do Issues, wymagań, ADR i planów.
+  - type: dropdown
+    id: approval
+    attributes:
+      label: Klasa zmiany
+      options:
+        - AI autonomous
+        - Product approval
+        - Architecture approval
+        - Manual approval
+    validations:
+      required: true
+  - type: textarea
+    id: tests
+    attributes:
+      label: Testy i UAT
+      description: Wymagane testy automatyczne i kroki ręcznej weryfikacji.
+    validations:
+      required: true
+

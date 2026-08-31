@@ -1,0 +1,47 @@
+name: Decision / ADR
+description: Decyzja produktowa, architektoniczna lub manualna
+title: "[DECISION] "
+body:
+  - type: textarea
+    id: context
+    attributes:
+      label: Kontekst i problem
+    validations:
+      required: true
+  - type: textarea
+    id: options
+    attributes:
+      label: Rozważane opcje
+      description: Dla każdej opcji opisz korzyści, koszty i konsekwencje.
+    validations:
+      required: true
+  - type: textarea
+    id: recommendation
+    attributes:
+      label: Rekomendacja AI
+      description: Wskaż rekomendację i konkretne uzasadnienie.
+    validations:
+      required: true
+  - type: dropdown
+    id: decision_type
+    attributes:
+      label: Typ decyzji
+      options:
+        - Product approval
+        - Architecture approval
+        - Manual approval
+    validations:
+      required: true
+  - type: textarea
+    id: unlocks
+    attributes:
+      label: Co odblokowuje decyzja
+      description: Linki do zależnych Issues lub kamienia milowego.
+    validations:
+      required: true
+  - type: textarea
+    id: owner_answer
+    attributes:
+      label: Decyzja właściciela
+      description: Właściciel wpisuje wybraną opcję i ewentualne warunki.
+
