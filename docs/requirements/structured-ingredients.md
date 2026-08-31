@@ -52,6 +52,5 @@ Scenario: Skalowanie przepisu bez zmiany danych bazowych
 
 - typ liczbowy ilości i sposób zapisu ułamków,
 - strategia migracji tekstu do rekordów,
-- możliwość składnika bez produktu katalogowego,
+- czy od M3 składnik bez dopasowanego produktu pozostaje wspieranym stanem docelowym, czy tylko przejściowym stanem migracji; w M2 zapis bez produktu jest dozwolony,
 - zasady zaokrąglania i formatowania.
-
