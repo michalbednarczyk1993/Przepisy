@@ -1,0 +1,47 @@
+name: Bug
+description: Zgłoszenie odtwarzalnego błędu
+title: "[BUG] "
+body:
+  - type: textarea
+    id: observed
+    attributes:
+      label: Obecne zachowanie
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Oczekiwane zachowanie
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Kroki reprodukcji
+      placeholder: |
+        1. ...
+        2. ...
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: Środowisko
+      placeholder: Android/iOS, wersja aplikacji, model urządzenia
+    validations:
+      required: true
+  - type: textarea
+    id: impact
+    attributes:
+      label: Wpływ i ryzyko danych
+      description: Czy błąd blokuje użycie albo może uszkodzić lub usunąć dane?
+    validations:
+      required: true
+  - type: textarea
+    id: regression
+    attributes:
+      label: Test regresyjny
+      description: Jaki test powinien nie przechodzić przed poprawką i przechodzić po niej?
+    validations:
+      required: true
+
