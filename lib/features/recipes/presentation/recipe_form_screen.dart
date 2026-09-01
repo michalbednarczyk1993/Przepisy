@@ -49,7 +49,7 @@ class _RecipeFormScreenState extends ConsumerState<RecipeFormScreen> {
             const SizedBox(height: 16),
             TextFormField(controller: title, decoration: const InputDecoration(labelText: 'Nazwa przepisu'), validator: (v) => v == null || v.trim().isEmpty ? 'Tytuł jest wymagany.' : null),
             const SizedBox(height: 12),
-            DropdownButtonFormField<int>(value: categoryId, decoration: const InputDecoration(labelText: 'Kategoria'), items: categories.map((c) => DropdownMenuItem(value: c.id, child: Text(c.name))).toList(), onChanged: (v) => setState(() => categoryId = v)),
+            DropdownButtonFormField<int>(initialValue: categoryId, decoration: const InputDecoration(labelText: 'Kategoria'), items: categories.map((c) => DropdownMenuItem(value: c.id, child: Text(c.name))).toList(), onChanged: (v) => setState(() => categoryId = v)),
             TextButton.icon(onPressed: () => showDialog<void>(context: context, builder: (_) => const AddCategoryDialog()), icon: const Icon(Icons.add), label: const Text('Dodaj kategorię')),
             TextFormField(controller: ingredients, minLines: 4, maxLines: 8, decoration: const InputDecoration(labelText: 'Składniki')),
             const SizedBox(height: 12),
