@@ -33,6 +33,8 @@ jobs:
           cp -R "${project_dir}/web" scaffold/web
           cp "${project_dir}/.metadata" scaffold/.metadata
           cp "${project_dir}/.gitignore" scaffold/.gitignore
+          flutter pub get
+          cp pubspec.lock scaffold/pubspec.lock
 
       - name: Upload scaffold
         uses: actions/upload-artifact@v4
