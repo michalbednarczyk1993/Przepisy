@@ -1,0 +1,43 @@
+name: Generate Flutter scaffold artifact
+
+on:
+  pull_request:
+    branches: [master]
+
+permissions:
+  contents: read
+
+jobs:
+  generate:
+    if: github.head_ref == 'm0/10-flutter-scaffold'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout source branch
+        uses: actions/checkout@v4
+
+      - name: Install pinned Flutter
+        shell: bash
+        run: |
+          git clone --depth 1 --branch 3.47.2 https://github.com/flutter/flutter.git "${RUNNER_TEMP}/flutter"
+          echo "${RUNNER_TEMP}/flutter/bin" >> "${GITHUB_PATH}"
+
+      - name: Generate standard platform scaffold
+        shell: bash
+        run: |
+          project_dir="${RUNNER_TEMP}/recipebook"
+          flutter create --org pl.local --project-name recipebook --platforms=android,ios,web "${project_dir}"
+          rm -rf scaffold
+          mkdir scaffold
+          cp -R "${project_dir}/android" scaffold/android
+          cp -R "${project_dir}/ios" scaffold/ios
+          cp -R "${project_dir}/web" scaffold/web
+          cp "${project_dir}/.metadata" scaffold/.metadata
+          cp "${project_dir}/.gitignore" scaffold/.gitignore
+
+      - name: Upload scaffold
+        uses: actions/upload-artifact@v4
+        with:
+          name: flutter-scaffold-3.47.2
+          path: scaffold
+          include-hidden-files: true
+          if-no-files-found: error
