@@ -32,6 +32,12 @@ Ten rejestr zapisuje wiążące decyzje o zakresie i zachowaniu produktu. Zmiana
 - Decyzja: najpierw powstaje strukturalny model i lokalny katalog generyczny; produkty sklepowe z Open Food Facts są pobierane na żądanie w późniejszym etapie.
 - Konsekwencja: cała baza Open Food Facts nie trafia do paczki aplikacji, a podstawowe gotowanie pozostaje offline.
 
+## 2026-09-01 — Prywatny preview webowy od M0
+
+- Status: Accepted
+- Decyzja: ten sam projekt Flutter udostępnia prywatny target Web publikowany przez ChatGPT Sites do szybkich testów właściciela produktu.
+- Konsekwencja: decyzja zastępuje wyłącznie część wcześniejszego zapisu „bez hostingu”. Nie dodajemy backendu, konta ani synchronizacji; Android i iOS pozostają platformami produktu i podstawą UAT. Szczegóły: [ADR-0006](../architecture/adr/0006-private-flutter-web-preview-in-chatgpt-sites.md) oraz [#31](https://github.com/michalbednarczyk1993/Przepisy/issues/31).
+
 ## Otwarte decyzje
 
 - [#23 — wpływ globalnych ustawień na istniejące przepisy](https://github.com/michalbednarczyk1993/Przepisy/issues/23)

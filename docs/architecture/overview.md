@@ -2,7 +2,7 @@
 
 ## Kontekst
 
-Aplikacja działa lokalnie na urządzeniu mobilnym. Nie ma backendu, konta ani synchronizacji. Architektura ma utrzymać prosty UX, a równocześnie przygotować domenę na strukturalne składniki, konwersje i odżywianie.
+Aplikacja działa lokalnie na urządzeniu mobilnym. Nie ma backendu, konta ani synchronizacji. Architektura ma utrzymać prosty UX, a równocześnie przygotować domenę na strukturalne składniki, konwersje i odżywianie. Prywatny preview Flutter Web w ChatGPT Sites daje szybki dostęp do wspólnych przepływów testowych, ale nie jest osobną platformą produktu.
 
 ## Warstwy aplikacji
 
@@ -34,6 +34,12 @@ lib/
 ```
 
 Ten układ jest punktem startowym, nie dowodem ukończenia. Przed dalszym rozwojem M0 musi odtworzyć pełny scaffold Flutter, wygenerować prawdziwy kod Drift i potwierdzić build.
+
+## Preview webowy
+
+Zgodnie z [ADR-0006](adr/0006-private-flutter-web-preview-in-chatgpt-sites.md) i [#31](https://github.com/michalbednarczyk1993/Przepisy/issues/31) ten sam projekt udostępnia target Flutter Web publikowany prywatnie przez ChatGPT Sites. Preview służy do częstego sprawdzania layoutu i wspólnych przepływów bez instalowania aplikacji.
+
+Dane preview pozostają lokalne dla przeglądarki. Persistence webowe, zdjęcia i uprawnienia są adapterami infrastruktury i mogą zachowywać się inaczej niż SQLite oraz system plików telefonu. Różnice muszą być widoczne w PR; test webowy nie zastępuje buildów ani UAT Android/iOS.
 
 ## Docelowe moduły domenowe
 
@@ -69,7 +75,7 @@ Moduły mają publikować małe kontrakty. Warstwa presentation nie importuje ta
 
 ## Sieć
 
-M0–M4 nie wymagają sieci do podstawowego działania. Integracja z Open Food Facts pojawia się w M5 za interfejsem źródła danych. Błąd sieci nie może blokować otwarcia zapisanych przepisów i produktów.
+Uruchomiona aplikacja nie wymaga sieci do podstawowego działania. Sieć jest potrzebna do opublikowania lub otwarcia prywatnego preview, ale nie dodaje backendu aplikacji. Integracja z Open Food Facts pojawia się w M5 za interfejsem źródła danych. Błąd sieci nie może blokować otwarcia zapisanych przepisów i produktów.
 
 ## Nawigacja
 

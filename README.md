@@ -1,12 +1,12 @@
 # Przepisy
 
-`Przepisy` to prywatna aplikacja mobilna do przechowywania i wygodnego używania przepisów kucharskich. Działa offline, przechowuje dane i zdjęcia lokalnie oraz od początku ma wspierać Androida i iOS.
+`Przepisy` to prywatna aplikacja mobilna do przechowywania i wygodnego używania przepisów kucharskich. Działa offline, przechowuje dane i zdjęcia lokalnie oraz od początku ma wspierać Androida i iOS. Prywatny Flutter Web publikowany przez ChatGPT Sites służy wyłącznie jako szybki preview testowy; nie zastępuje aplikacji mobilnych ani ich UAT.
 
 ## Stan projektu
 
 Repozytorium zawiera pierwszy szkic Flutterowego MVP. Nie traktujemy go jeszcze jako działającej wersji: build nie został odtworzony w pełnym środowisku Flutter, plik generowany przez Drift jest placeholderem, a konfiguracje platform mobilnych wymagają uzupełnienia i weryfikacji.
 
-Najbliższy cel to **M0 — wiarygodny, powtarzalny zielony build**. Dopiero po nim domykamy funkcjonalne MVP.
+Najbliższy cel to **M0 — wiarygodny, powtarzalny zielony build** wraz z prywatnym preview webowym opisanym w [#31](https://github.com/michalbednarczyk1993/Przepisy/issues/31). Dopiero po nim domykamy funkcjonalne MVP.
 
 ## Zakres MVP
 

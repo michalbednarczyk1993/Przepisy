@@ -84,7 +84,7 @@ Dolna nawigacja zawiera `Przepisy` i `Kategorie`. Formularze i szczegóły nie t
 ## Wymagania niefunkcjonalne
 
 - Android i iOS od pierwszego wydania.
-- Brak backendu, logowania, hostingu i synchronizacji.
+- Brak backendu, logowania i synchronizacji. Prywatny hosting testowego preview Flutter Web jest wyjątkiem opisanym w ADR-0006.
 - Pełny podstawowy przepływ działa w trybie samolotowym.
 - Dane pozostają po zamknięciu i ponownym uruchomieniu aplikacji.
 - UI jest po polsku, opiera się na Material 3 i zachowuje czytelność przy systemowym skalowaniu tekstu.
@@ -118,4 +118,4 @@ Scenario: Ochrona używanej kategorii
 
 ## Poza zakresem MVP
 
-Strukturalne składniki, skalowanie porcji, wartości odżywcze, katalog produktów, wiele zdjęć, eksport, import URL, OCR, lista zakupów, konta, synchronizacja, backend i web.
+Strukturalne składniki, skalowanie porcji, wartości odżywcze, katalog produktów, wiele zdjęć, eksport, import URL, OCR, lista zakupów, konta, synchronizacja, backend oraz publiczna lub pełnoprawnie wspierana wersja webowa. Prywatny preview testowy jest częścią M0/M1, a nie funkcją produktu.

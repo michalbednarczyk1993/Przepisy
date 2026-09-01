@@ -44,6 +44,14 @@ Krytyczne przepływy na aplikacji:
 - skalowanie przepisu,
 - działanie podstawowe w trybie offline.
 
+### Prywatny preview webowy
+
+- Flutter Web służy do szybkich smoke testów wspólnego UI i przepływów,
+- preview jest publikowany prywatnie przez ChatGPT Sites,
+- dane testowe pozostają lokalne dla przeglądarki i mogą zostać wyczyszczone między wdrożeniami,
+- różnice persistence, zdjęć i uprawnień są jawnie opisane,
+- zielony preview nie zastępuje testów Android/iOS ani UAT na urządzeniach.
+
 ### Build i testy platformowe
 
 - Android debug build w każdym PR,
@@ -60,8 +68,9 @@ Docelowa kolejność CI:
 4. `flutter analyze`,
 5. `flutter test`,
 6. build Android,
-7. właściwe skany zależności i bezpieczeństwa,
-8. build iOS w odpowiednim jobie.
+7. build Flutter Web,
+8. właściwe skany zależności i bezpieczeństwa,
+9. build iOS w odpowiednim jobie.
 
 Próg coverage można ustawić dopiero po wiarygodnym baseline. Po wprowadzeniu nie wolno go obniżyć bez Manual Approval.
 

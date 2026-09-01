@@ -77,9 +77,11 @@ Przejście M1 → M2 musi być bezstratne:
 
 ## Otwarte decyzje blokujące schemat docelowy
 
-- `Product` kontra `Food` i rola `ProductVariant`,
-- snapshot wariantu w przepisie kontra dynamiczne dziedziczenie ustawień,
-- model jednostek wymiarowych i konwersji zależnych od produktu,
-- reprezentacja ilości i ułamków,
-- wersjonowanie wbudowanego katalogu,
-- polityka usuwania i dezaktywacji rekordów użytych historycznie.
+Dyskusja i decyzje są prowadzone w powiązanych Issues. Wniosek, który zmienia architekturę, kończy się ADR przed implementacją schematu.
+
+- [`Product` kontra `Food` i rola `ProductVariant` — #24](https://github.com/michalbednarczyk1993/Przepisy/issues/24),
+- [snapshot wariantu kontra wpływ ustawień globalnych — #23](https://github.com/michalbednarczyk1993/Przepisy/issues/23),
+- [reprezentacja ilości, ułamków i migracja składników — #22](https://github.com/michalbednarczyk1993/Przepisy/issues/22),
+- [jednostki wymiarowe, miary, opakowania i konwersje zależne od produktu — #27](https://github.com/michalbednarczyk1993/Przepisy/issues/27),
+- [wersjonowanie wbudowanego katalogu — #28](https://github.com/michalbednarczyk1993/Przepisy/issues/28),
+- polityka usuwania i dezaktywacji rekordów użytych historycznie — część projektowania w [#22](https://github.com/michalbednarczyk1993/Przepisy/issues/22) i [#27](https://github.com/michalbednarczyk1993/Przepisy/issues/27).

@@ -15,6 +15,12 @@
 
 Developer nie zatwierdza sam własnej pracy jako Reviewer.
 
+## Organizacja niezależnego review AI
+
+Za uruchomienie review odpowiada AI prowadzący pracę, nie Michał. Po otwarciu PR i przejściu dostępnych testów przekazuje odrębnemu Reviewerowi AI: Issue, właściwe wymagania i ADR, diff, wyniki testów oraz znane ryzyka. Reviewer pracuje w świeżym kontekście, nie implementuje tej samej zmiany i zapisuje wynik w PR jako `APPROVE`, `BLOCKING` oraz opcjonalne `NON-BLOCKING`.
+
+Jeżeli środowisko nie pozwala uruchomić odrębnego review, PR pozostaje w `AI REVIEW`; brak review nie jest zastępowany samooceną Developera. Michał nie konfiguruje agentów ani promptów — jego rolą pozostaje decyzja produktowa, architektoniczna lub UAT.
+
 ## Przepływ zadania
 
 ```mermaid
@@ -60,7 +66,9 @@ Dokładne statusy GitHub Project:
 
 ## Od pomysłu do implementacji
 
-1. Product Owner opisuje potrzebę.
+Product Owner może opisać potrzebę w rozmowie z AI albo bezpośrednio w GitHub Issue. Przy większej lub niejednoznacznej zmianie używa szablonu Feature lub Decision. Jeżeli potrzeba zaczyna się w rozmowie, AI zakłada Issue, zapisuje wynik, kryteria akceptacji i otwarte pytania oraz linkuje źródłową dyskusję, gdy jest dostępna. Dalsze wiążące ustalenia trafiają do Issue, wymagań lub ADR — nie zostają wyłącznie w czacie.
+
+1. Product Owner opisuje potrzebę w rozmowie albo Issue.
 2. AI przygotowuje analizę, UX, edge case'y, wpływ na model i propozycję ADR.
 3. Decyzje Product/Architecture/Manual wracają do właściciela jako przypisane Issue.
 4. Po akceptacji AI tworzy małe zadania spełniające Definition of Ready.
@@ -89,7 +97,16 @@ Dokładne statusy GitHub Project:
 
 ## Project Gardener
 
-Okresowy przegląd analizuje kod, dokumenty, Issues, ADR, zależności i testy. Tworzy Issues dla rozbieżności, TODO, martwego kodu, brakujących migracji i długu. Nie naprawia automatycznie wszystkiego w jednym PR.
+Project Gardener jest rolą AI uruchamianą przez AI prowadzącego pracę. Michał nie konfiguruje osobnego agenta.
+
+Przegląd uruchamiamy:
+
+- po domknięciu każdego kamienia milowego, przed rozpoczęciem następnego,
+- raz w miesiącu, jeżeli projekt jest aktywnie rozwijany i w danym miesiącu nie było przeglądu kamienia,
+- po istotnej zmianie roadmapy, modelu danych, architektury lub procesu,
+- na żądanie, gdy pojawia się sprzeczność między kodem, dokumentacją i Issues.
+
+Gardener analizuje kod, dokumenty, Issues, ADR, zależności i testy. Wynikiem jest komentarz w trackerze kamienia oraz osobne Issues dla rozbieżności, TODO, martwego kodu, brakujących migracji i długu. Nie zmienia zakresu produktu i nie naprawia automatycznie wszystkiego w jednym PR.
 
 ## Wersja autonomii
 

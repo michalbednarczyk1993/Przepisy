@@ -21,7 +21,7 @@ Jeżeli źródła są sprzeczne, nie zgaduj. Zatrzymaj implementację i utwórz 
 - Jedno logiczne zadanie = jedna gałąź = jeden PR.
 - Nie łącz refaktoryzacji niezwiązanej z celem zadania.
 - PR powinien być mały, odwracalny i możliwy do niezależnego review.
-- Nie merguj własnego PR-a bez niezależnego review AI i zielonego CI.
+- Nie merguj własnego PR-a bez niezależnego review AI przeprowadzonego w świeżym kontekście i zielonego CI.
 - Nie merguj zmian wymagających Product, Architecture lub Manual Approval bez jawnej decyzji właściciela.
 
 ## Klasy zmian
@@ -33,7 +33,7 @@ Jeżeli źródła są sprzeczne, nie zgaduj. Zatrzymaj implementację i utwórz 
 
 ## Reguły techniczne
 
-- Flutter i Dart są jedynym stosem aplikacji mobilnej, dopóki ADR nie zmieni tej decyzji.
+- Flutter i Dart są jedynym stosem aplikacji. Testowy target Flutter Web i publikacja przez ChatGPT Sites podlegają ADR-0006; nie wolno tworzyć równoległej implementacji produktu w innym frameworku.
 - Dane są lokalne w SQLite przez Drift; zdjęcia są plikami lokalnymi, a baza przechowuje ścieżki.
 - UI nie może zawierać logiki przeliczania ilości, wariantów ani wartości odżywczych.
 - Moduły domenowe komunikują się przez jawne interfejsy, np. `ProductCatalog`, `QuantityConverter`, `NutritionCalculator` i repozytoria.

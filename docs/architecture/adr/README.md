@@ -36,4 +36,5 @@ ADR zapisuje decyzję, której zmiana wpływa na architekturę, dane lub sposób
 - [ADR-0003: Tekstowe składniki w MVP](0003-text-ingredients-in-mvp.md)
 - [ADR-0004: Moduły domenowe po MVP](0004-domain-modules-after-mvp.md)
 - [ADR-0005: Źródła danych żywieniowych](0005-food-data-sources.md)
+- [ADR-0006: Prywatny Flutter Web preview w ChatGPT Sites](0006-private-flutter-web-preview-in-chatgpt-sites.md)
 

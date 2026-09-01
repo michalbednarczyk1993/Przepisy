@@ -8,14 +8,15 @@ Cel: repozytorium daje się odtworzyć od zera, a automatyczne bramki jakości m
 
 Zakres:
 
-- kompletny scaffold Flutter dla Androida i iOS,
+- kompletny scaffold Flutter dla Androida, iOS i testowego targetu Web,
 - spójne zależności i wygenerowany kod Drift,
 - formatowanie, analiza, testy i build Android w CI,
 - strategia testów bazy i migracji,
 - szablony Issues/PR oraz ochrona `master`,
-- jednoznaczny proces AI Development Process v1.
+- jednoznaczny proces AI Development Process v1,
+- powtarzalny build Flutter Web oraz prywatny preview w ChatGPT Sites zgodnie z [#31](https://github.com/michalbednarczyk1993/Przepisy/issues/31).
 
-Wyjście: świeży checkout przechodzi udokumentowane komendy, CI jest zielone, a `master` nie przyjmuje bezpośrednich zmian.
+Wyjście: świeży checkout przechodzi udokumentowane komendy, CI jest zielone, `master` nie przyjmuje bezpośrednich zmian, a aktualny prywatny preview webowy można otworzyć z udokumentowanego URL.
 
 ## M1 — MVP 0.1.0
 
@@ -29,7 +30,8 @@ Zakres:
 - lista, szczegóły, wyszukiwanie i filtrowanie,
 - trwałość danych,
 - obsługa pustych, błędnych i anulowanych stanów,
-- UAT na realnym urządzeniu.
+- szybki przegląd wspólnych przepływów w prywatnym preview webowym,
+- UAT na realnych urządzeniach Android i iOS.
 
 Wyjście: wszystkie kryteria z `docs/requirements/mvp.md` są spełnione i zaakceptowane w UAT.
 
