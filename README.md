@@ -4,9 +4,29 @@
 
 ## Stan projektu
 
-Repozytorium zawiera pierwszy szkic Flutterowego MVP. Nie traktujemy go jeszcze jako działającej wersji: build nie został odtworzony w pełnym środowisku Flutter, plik generowany przez Drift jest placeholderem, a konfiguracje platform mobilnych wymagają uzupełnienia i weryfikacji.
+Repozytorium zawiera kod MVP oraz standardowy scaffold Flutter dla Androida, iOS i Web. Do uzyskania wiarygodnego zielonego buildu nadal wymagane jest zastąpienie placeholdera Drift w #12 i uruchomienie pełnych bramek CI w #14.
 
 Najbliższy cel to **M0 — wiarygodny, powtarzalny zielony build** wraz z prywatnym preview webowym opisanym w [#31](https://github.com/michalbednarczyk1993/Przepisy/issues/31). Dopiero po nim domykamy funkcjonalne MVP.
+
+## Środowisko deweloperskie
+
+Projekt używa Fluttera `3.47.2` i dostarczanego z nim Darta `3.13.2`.
+Wersja Fluttera jest przypięta w `.flutter-version`, a para wersji jest
+weryfikowana w GitHub Actions.
+
+```bash
+flutter --version
+dart --version
+flutter pub get
+dart run build_runner build --delete-conflicting-outputs
+dart format --output=none --set-exit-if-changed $(git ls-files '*.dart' ':!:**/*.g.dart')
+flutter analyze
+flutter test
+flutter build apk --debug
+flutter build web
+```
+
+Build iOS wymaga macOS z Xcode. Do czasu ukończenia #12 generowanie kodu Drift i pełna kompilacja mogą kończyć się błędem związanym z ręcznym placeholderem `app_database.g.dart`; nie należy obchodzić tego błędu ani wyłączać generatora.
 
 ## Zakres MVP
 
