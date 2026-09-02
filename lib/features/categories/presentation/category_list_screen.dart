@@ -36,7 +36,7 @@ class CategoryListScreen extends ConsumerWidget {
                       final ok = await ref
                           .read(categoryRepositoryProvider)
                           .deleteIfUnused(items[index].id);
-                      if (!ok && context.mounted)
+                      if (!ok && context.mounted) {
                         ScaffoldMessenger.of(context).showSnackBar(
                           const SnackBar(
                             content: Text(
@@ -44,6 +44,7 @@ class CategoryListScreen extends ConsumerWidget {
                             ),
                           ),
                         );
+                      }
                     },
                   ),
                 ),

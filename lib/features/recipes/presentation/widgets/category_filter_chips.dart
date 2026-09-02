@@ -22,12 +22,13 @@ class CategoryFilterChips extends StatelessWidget {
         itemCount: categories.length + 1,
         separatorBuilder: (_, __) => const SizedBox(width: 8),
         itemBuilder: (context, index) {
-          if (index == 0)
+          if (index == 0) {
             return FilterChip(
               label: const Text('Wszystkie'),
               selected: selectedId == null,
               onSelected: (_) => onSelected(null),
             );
+          }
           final category = categories[index - 1];
           return FilterChip(
             label: Text(category.name),

@@ -131,8 +131,9 @@ class _RecipeFormScreenState extends ConsumerState<RecipeFormScreen> {
                   FilledButton(
                     onPressed: () async {
                       if (!formKey.currentState!.validate() ||
-                          categoryId == null)
+                          categoryId == null) {
                         return;
+                      }
                       final draft = RecipeDraft(
                         title: title.text,
                         categoryId: categoryId!,

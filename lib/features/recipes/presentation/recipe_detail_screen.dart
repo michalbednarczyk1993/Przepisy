@@ -18,14 +18,16 @@ class RecipeDetailScreen extends ConsumerWidget {
       future: ref.watch(recipeRepositoryProvider).getById(id),
       builder: (context, snapshot) {
         final item = snapshot.data;
-        if (snapshot.connectionState != ConnectionState.done)
+        if (snapshot.connectionState != ConnectionState.done) {
           return const Scaffold(
             body: Center(child: CircularProgressIndicator()),
           );
-        if (item == null)
+        }
+        if (item == null) {
           return const Scaffold(
             body: EmptyState(message: 'Nie znaleziono przepisu.'),
           );
+        }
         final recipe = item.recipe;
         return Scaffold(
           appBar: AppBar(

@@ -64,10 +64,11 @@ class _RecipeListScreenState extends ConsumerState<RecipeListScreen> {
                         );
                     return matchesCategory && matchesQuery;
                   }).toList();
-                  if (filtered.isEmpty)
+                  if (filtered.isEmpty) {
                     return const EmptyState(
                       message: 'Brak przepisów. Dodaj pierwszy przepis.',
                     );
+                  }
                   return ListView.separated(
                     itemCount: filtered.length,
                     separatorBuilder: (_, __) => const SizedBox(height: 8),

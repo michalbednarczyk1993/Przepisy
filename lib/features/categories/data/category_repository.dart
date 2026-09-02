@@ -36,16 +36,21 @@ class CategoryRepository {
     final normalized = name.trim().toLowerCase();
     final rows = await _db.select(_db.categories).get();
     for (final category in rows) {
-      if (category.name.trim().toLowerCase() == normalized) return category;
+      if (category.name.trim().toLowerCase() == normalized) {
+        return category;
+      }
     }
     return null;
   }
 
   Future<int> add(String name) async {
     final trimmed = name.trim();
-    if (trimmed.isEmpty) throw ArgumentError('Nazwa kategorii jest wymagana.');
-    if (await findByNameInsensitive(trimmed) != null)
+    if (trimmed.isEmpty) {
+      throw ArgumentError('Nazwa kategorii jest wymagana.');
+    }
+    if (await findByNameInsensitive(trimmed) != null) {
       throw StateError('Kategoria już istnieje.');
+    }
     return _db
         .into(_db.categories)
         .insert(
