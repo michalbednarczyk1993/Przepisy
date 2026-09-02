@@ -12,8 +12,14 @@ Future<bool> showConfirmDialog(
           title: Text(title),
           content: Text(message),
           actions: [
-            TextButton(onPressed: () => Navigator.pop(context, false), child: const Text('Anuluj')),
-            FilledButton.tonal(onPressed: () => Navigator.pop(context, true), child: Text(confirmLabel)),
+            TextButton(
+              onPressed: () => Navigator.pop(context, false),
+              child: const Text('Anuluj'),
+            ),
+            FilledButton.tonal(
+              onPressed: () => Navigator.pop(context, true),
+              child: Text(confirmLabel),
+            ),
           ],
         ),
       ) ??

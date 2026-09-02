@@ -23,10 +23,14 @@ class CategoryRepository {
   final AppDatabase _db;
 
   Stream<List<Category>> watchAll() {
-    return (_db.select(_db.categories)..orderBy([(c) => OrderingTerm(expression: c.name)])).watch();
+    return (_db.select(
+      _db.categories,
+    )..orderBy([(c) => OrderingTerm(expression: c.name)])).watch();
   }
 
-  Future<List<Category>> getAll() => (_db.select(_db.categories)..orderBy([(c) => OrderingTerm(expression: c.name)])).get();
+  Future<List<Category>> getAll() => (_db.select(
+    _db.categories,
+  )..orderBy([(c) => OrderingTerm(expression: c.name)])).get();
 
   Future<Category?> findByNameInsensitive(String name) async {
     final normalized = name.trim().toLowerCase();
@@ -40,12 +44,19 @@ class CategoryRepository {
   Future<int> add(String name) async {
     final trimmed = name.trim();
     if (trimmed.isEmpty) throw ArgumentError('Nazwa kategorii jest wymagana.');
-    if (await findByNameInsensitive(trimmed) != null) throw StateError('Kategoria już istnieje.');
-    return _db.into(_db.categories).insert(CategoriesCompanion.insert(name: trimmed, createdAt: DateTime.now()));
+    if (await findByNameInsensitive(trimmed) != null)
+      throw StateError('Kategoria już istnieje.');
+    return _db
+        .into(_db.categories)
+        .insert(
+          CategoriesCompanion.insert(name: trimmed, createdAt: DateTime.now()),
+        );
   }
 
   Future<bool> deleteIfUnused(int id) async {
-    final count = await (_db.select(_db.recipes)..where((r) => r.categoryId.equals(id))).get();
+    final count = await (_db.select(
+      _db.recipes,
+    )..where((r) => r.categoryId.equals(id))).get();
     if (count.isNotEmpty) return false;
     await (_db.delete(_db.categories)..where((c) => c.id.equals(id))).go();
     return true;

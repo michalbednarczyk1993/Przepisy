@@ -10,9 +10,13 @@ Najbliższy cel to **M0 — wiarygodny, powtarzalny zielony build** wraz z prywa
 
 ## Środowisko deweloperskie
 
-Projekt używa Fluttera `3.47.2`, przypiętego w `.flutter-version`.
+Projekt używa Fluttera `3.47.2` i dostarczanego z nim Darta `3.13.2`.
+Wersja Fluttera jest przypięta w `.flutter-version`, a para wersji jest
+weryfikowana w GitHub Actions.
 
 ```bash
+flutter --version
+dart --version
 flutter pub get
 dart run build_runner build --delete-conflicting-outputs
 dart format --output=none --set-exit-if-changed .
