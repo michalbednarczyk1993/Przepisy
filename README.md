@@ -19,7 +19,7 @@ flutter --version
 dart --version
 flutter pub get
 dart run build_runner build --delete-conflicting-outputs
-dart format --output=none --set-exit-if-changed .
+dart format --output=none --set-exit-if-changed $(git ls-files '*.dart' ':!:**/*.g.dart')
 flutter analyze
 flutter test
 flutter build apk --debug
