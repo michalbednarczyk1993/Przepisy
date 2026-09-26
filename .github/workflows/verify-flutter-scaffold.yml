@@ -50,7 +50,7 @@ jobs:
         run: flutter test
 
       - name: Build Web
-        run: flutter build web
+        run: ./tool/build_sites_preview.sh
 
       - name: Build Android debug
         run: flutter build apk --debug

@@ -1,11 +1,10 @@
-import 'dart:io';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../../core/widgets/confirm_dialog.dart';
 import '../../../core/widgets/empty_state.dart';
+import '../../../core/widgets/stored_image.dart';
 import '../data/recipe_repository.dart';
 
 class RecipeDetailScreen extends ConsumerWidget {
@@ -48,8 +47,8 @@ class RecipeDetailScreen extends ConsumerWidget {
                   child: const Icon(Icons.restaurant, size: 72),
                 )
               else
-                Image.file(
-                  File(recipe.imagePath!),
+                StoredImage(
+                  path: recipe.imagePath!,
                   height: 240,
                   fit: BoxFit.cover,
                 ),

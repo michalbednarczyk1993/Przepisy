@@ -49,6 +49,8 @@ Krytyczne przepływy na aplikacji:
 - Flutter Web służy do szybkich smoke testów wspólnego UI i przepływów,
 - preview jest publikowany prywatnie przez ChatGPT Sites,
 - dane testowe pozostają lokalne dla przeglądarki i mogą zostać wyczyszczone między wdrożeniami,
+- CI buduje dokładnie katalog statyczny publikowany przez Sites i sprawdza zasoby SQLite/Wasm,
+- po wdrożeniu wykonywany jest smoke test: demo → odświeżenie → CRUD → reset,
 - różnice persistence, zdjęć i uprawnień są jawnie opisane,
 - zielony preview nie zastępuje testów Android/iOS ani UAT na urządzeniach.
 
@@ -77,4 +79,3 @@ Próg coverage można ustawić dopiero po wiarygodnym baseline. Po wprowadzeniu 
 ## Testy specyfikacji
 
 Krytyczne kryteria zapisujemy w formie Given/When/Then. Test może być jednostkowy, widgetowy lub integracyjny, ale jego nazwa powinna pozwolić powiązać go z wymaganiem.
-
