@@ -4,7 +4,7 @@ set -euo pipefail
 repo_root="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 cd "${repo_root}"
 
-flutter build web --release
+flutter build web --release --no-web-resources-cdn
 
 rm -rf "${repo_root}/dist"
 mkdir -p "${repo_root}/dist"
