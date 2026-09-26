@@ -5,7 +5,9 @@ import '../../../core/widgets/confirm_dialog.dart';
 import '../data/preview_data_service.dart';
 
 class PreviewDataActions extends ConsumerWidget {
-  const PreviewDataActions({super.key});
+  const PreviewDataActions({required this.onDataChanged, super.key});
+
+  final VoidCallback onDataChanged;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -52,6 +54,7 @@ class PreviewDataActions extends ConsumerWidget {
       );
       return;
     }
+    onDataChanged();
     if (!context.mounted) return;
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(

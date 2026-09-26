@@ -19,6 +19,8 @@ class _RecipeListScreenState extends ConsumerState<RecipeListScreen> {
   int? categoryId;
   String query = '';
 
+  void resetCategoryFilter() => setState(() => categoryId = null);
+
   @override
   Widget build(BuildContext context) {
     final recipes = ref.watch(recipesProvider);
@@ -26,7 +28,7 @@ class _RecipeListScreenState extends ConsumerState<RecipeListScreen> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Moje przepisy'),
-        actions: const [PreviewDataActions()],
+        actions: [PreviewDataActions(onDataChanged: resetCategoryFilter)],
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () => context.push('/recipes/new'),
