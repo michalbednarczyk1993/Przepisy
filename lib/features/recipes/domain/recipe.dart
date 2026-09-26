@@ -25,6 +25,8 @@ class Recipe {
 bool recipeMatchesFilters(Recipe recipe, {int? categoryId, String query = ''}) {
   final matchesCategory = categoryId == null || recipe.categoryId == categoryId;
   final normalizedQuery = query.trim().toLowerCase();
-  final matchesQuery = normalizedQuery.isEmpty || recipe.title.toLowerCase().contains(normalizedQuery);
+  final matchesQuery =
+      normalizedQuery.isEmpty ||
+      recipe.title.toLowerCase().contains(normalizedQuery);
   return matchesCategory && matchesQuery;
 }

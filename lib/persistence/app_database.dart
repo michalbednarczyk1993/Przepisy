@@ -25,18 +25,22 @@ class AppDatabase extends _$AppDatabase {
 
   @override
   MigrationStrategy get migration => MigrationStrategy(
-        onCreate: (m) async {
-          await m.createAll();
-          await seedStarterCategories();
-        },
-      );
+    onCreate: (m) async {
+      await m.createAll();
+      await seedStarterCategories();
+    },
+  );
 
   Future<void> seedStarterCategories() async {
     final now = DateTime.now();
     await batch((batch) {
       batch.insertAllOnConflictUpdate(
         categories,
-        starterCategoryNames.map((name) => CategoriesCompanion.insert(name: name, createdAt: now)).toList(),
+        starterCategoryNames
+            .map(
+              (name) => CategoriesCompanion.insert(name: name, createdAt: now),
+            )
+            .toList(),
       );
     });
   }

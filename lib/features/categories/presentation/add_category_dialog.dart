@@ -14,19 +14,42 @@ class _AddCategoryDialogState extends ConsumerState<AddCategoryDialog> {
   String? error;
 
   @override
-  void dispose() { controller.dispose(); super.dispose(); }
+  void dispose() {
+    controller.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
     return AlertDialog(
       title: const Text('Dodaj kategorię'),
-      content: TextField(controller: controller, decoration: InputDecoration(labelText: 'Nazwa kategorii', errorText: error)),
+      content: TextField(
+        controller: controller,
+        decoration: InputDecoration(
+          labelText: 'Nazwa kategorii',
+          errorText: error,
+        ),
+      ),
       actions: [
-        TextButton(onPressed: () => Navigator.pop(context), child: const Text('Anuluj')),
-        FilledButton(onPressed: () async {
-          try { await ref.read(categoryRepositoryProvider).add(controller.text); if (context.mounted) Navigator.pop(context); }
-          catch (e) { setState(() => error = e is ArgumentError ? 'Nazwa nie może być pusta.' : 'Kategoria już istnieje.'); }
-        }, child: const Text('Dodaj')),
+        TextButton(
+          onPressed: () => Navigator.pop(context),
+          child: const Text('Anuluj'),
+        ),
+        FilledButton(
+          onPressed: () async {
+            try {
+              await ref.read(categoryRepositoryProvider).add(controller.text);
+              if (context.mounted) Navigator.pop(context);
+            } catch (e) {
+              setState(
+                () => error = e is ArgumentError
+                    ? 'Nazwa nie może być pusta.'
+                    : 'Kategoria już istnieje.',
+              );
+            }
+          },
+          child: const Text('Dodaj'),
+        ),
       ],
     );
   }
