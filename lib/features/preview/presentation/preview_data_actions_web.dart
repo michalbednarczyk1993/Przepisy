@@ -54,8 +54,8 @@ class PreviewDataActions extends ConsumerWidget {
       );
       return;
     }
-    onDataChanged();
     if (!context.mounted) return;
+    onDataChanged();
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
         content: Text(
