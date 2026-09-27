@@ -4,7 +4,7 @@
 
 ## Stan projektu
 
-Repozytorium zawiera kod MVP oraz standardowy scaffold Flutter dla Androida, iOS i Web. Do uzyskania wiarygodnego zielonego buildu nadal wymagane jest zastąpienie placeholdera Drift w #12 i uruchomienie pełnych bramek CI w #14.
+Repozytorium zawiera kod MVP oraz standardowy scaffold Flutter dla Androida, iOS i Web. Prywatny preview webowy używa lokalnego Drift/SQLite przez WebAssembly i ma jawny reset oraz dane demonstracyjne.
 
 Najbliższy cel to **M0 — wiarygodny, powtarzalny zielony build** wraz z prywatnym preview webowym opisanym w [#31](https://github.com/michalbednarczyk1993/Przepisy/issues/31). Dopiero po nim domykamy funkcjonalne MVP.
 
@@ -52,6 +52,7 @@ Składniki pozostają tekstem w MVP. Strukturalne składniki, skalowanie porcji,
 - [Proces pracy AI](docs/process/ai-development-process.md)
 - [Definition of Done](docs/quality/definition-of-done.md)
 - [Instrukcje dla agentów](AGENTS.md)
+- [Prywatny preview Flutter Web](docs/operations/private-web-preview.md)
 
 ## Zasady pracy
 

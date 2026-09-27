@@ -39,7 +39,7 @@ Ten układ jest punktem startowym, nie dowodem ukończenia. Przed dalszym rozwoj
 
 Zgodnie z [ADR-0006](adr/0006-private-flutter-web-preview-in-chatgpt-sites.md) i [#31](https://github.com/michalbednarczyk1993/Przepisy/issues/31) ten sam projekt udostępnia target Flutter Web publikowany prywatnie przez ChatGPT Sites. Preview służy do częstego sprawdzania layoutu i wspólnych przepływów bez instalowania aplikacji.
 
-Dane preview pozostają lokalne dla przeglądarki. Persistence webowe, zdjęcia i uprawnienia są adapterami infrastruktury i mogą zachowywać się inaczej niż SQLite oraz system plików telefonu. Różnice muszą być widoczne w PR; test webowy nie zastępuje buildów ani UAT Android/iOS.
+Dane preview pozostają lokalne dla przeglądarki. Drift używa SQLite przez WebAssembly i dobiera obsługiwany przez przeglądarkę magazyn origin. Zdjęcia są przechowywane w webowym adapterze jako data URL, podczas gdy adapter mobilny nadal zapisuje pliki w katalogu aplikacji. Warstwa presentation używa wspólnego `StoredImage`, bez importowania `dart:io`. Szczegóły operacyjne i ograniczenia opisuje [instrukcja preview](../operations/private-web-preview.md). Test webowy nie zastępuje buildów ani UAT Android/iOS.
 
 ## Docelowe moduły domenowe
 

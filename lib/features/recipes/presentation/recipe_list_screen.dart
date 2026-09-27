@@ -4,6 +4,7 @@ import 'package:go_router/go_router.dart';
 
 import '../../../core/widgets/empty_state.dart';
 import '../../categories/data/category_repository.dart';
+import '../../preview/presentation/preview_data_actions.dart';
 import '../data/recipe_repository.dart';
 import '../presentation/widgets/category_filter_chips.dart';
 import '../presentation/widgets/recipe_card.dart';
@@ -18,12 +19,17 @@ class _RecipeListScreenState extends ConsumerState<RecipeListScreen> {
   int? categoryId;
   String query = '';
 
+  void resetCategoryFilter() => setState(() => categoryId = null);
+
   @override
   Widget build(BuildContext context) {
     final recipes = ref.watch(recipesProvider);
     final categories = ref.watch(categoriesProvider);
     return Scaffold(
-      appBar: AppBar(title: const Text('Moje przepisy')),
+      appBar: AppBar(
+        title: const Text('Moje przepisy'),
+        actions: [PreviewDataActions(onDataChanged: resetCategoryFilter)],
+      ),
       floatingActionButton: FloatingActionButton(
         onPressed: () => context.push('/recipes/new'),
         child: const Icon(Icons.add),

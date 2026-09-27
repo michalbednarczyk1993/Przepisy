@@ -1,8 +1,7 @@
-import 'dart:io';
-
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 
+import '../../../../core/widgets/stored_image.dart';
 import '../../../../services/image_storage_service.dart';
 
 class ImagePickerBox extends StatefulWidget {
@@ -44,8 +43,8 @@ class _ImagePickerBoxState extends State<ImagePickerBox> {
               Text('JPG, PNG'),
             ],
           )
-        : Image.file(
-            File(currentPath!),
+        : StoredImage(
+            path: currentPath!,
             fit: BoxFit.cover,
             width: double.infinity,
           );

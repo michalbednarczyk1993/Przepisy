@@ -1,7 +1,6 @@
-import 'dart:io';
-
 import 'package:flutter/material.dart';
 
+import '../../../../core/widgets/stored_image.dart';
 import '../../data/recipe_repository.dart';
 
 class RecipeCard extends StatelessWidget {
@@ -29,8 +28,8 @@ class RecipeCard extends StatelessWidget {
                         color: Colors.green.shade50,
                         child: const Icon(Icons.restaurant, size: 36),
                       )
-                    : Image.file(
-                        File(imagePath),
+                    : StoredImage(
+                        path: imagePath,
                         width: 96,
                         height: 96,
                         fit: BoxFit.cover,
